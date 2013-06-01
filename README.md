@@ -66,3 +66,8 @@ I would strongly recommend using this on a clean installation of WHMCS to ensure
 ## Thanks
 I'd like to give a shout out to FakeNameGenerator.com which has helped me with providing testing data into this suite.
 
+## Contact
+
+If you'd like to get in contact with me you can either linkedin me or contact me @ hello@inventionlabs.com.au
+Linkedin: http://au.linkedin.com/in/karlkloppenborg
+
