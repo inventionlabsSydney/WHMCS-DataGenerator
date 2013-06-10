@@ -33,7 +33,7 @@ class sqlCore {
 		include_once($configuration); //Include the configuration file so we can use the DB login details.
 
 		//Okay lets now instanciate the SQL object.
-		$this->_sqlObject = new mysqli($db_host, $db_username, $db_password);
+		$this->_sqlObject = new \mysqli($db_host, $db_username, $db_password, $db_name);
 		//check connection
 		if(mysqli_connect_errno())
 			throw new \Exception(sprintf("MySQLi Unable to connect for reason: %s", mysqli_connect_error()));
@@ -44,5 +44,11 @@ class sqlCore {
 
 	public function mysql_escape_string($value) {
 		return $this->_sqlObject->real_escape_string($value);
+	}
+
+	public function insert($query) {
+		if(!$this->_sqlObject->query($query))
+			throw new \Exception(sprintf("Mysqli Error: %s", $this->_sqlObject->error));
+		return $this->_sqlObject->insert_id;
 	}
 }

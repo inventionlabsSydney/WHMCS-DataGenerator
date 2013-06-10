@@ -12,9 +12,9 @@ abstract class dataModels extends sqlCore {
 	public $columns = array();
 	private $tblname = null;
 
-	function __construct($tblname) {
-		parent::__construct();
-		$this->tblname = $tblname;
+	function __construct($tblname, $configuration = false) {
+		parent::__construct($configuration);
+		$this->tblname = end(explode('\\', $tblname));
 		$this->tableDefinition();
 	}
 	public function hasColumn($name, $type) {
@@ -35,7 +35,7 @@ abstract class dataModels extends sqlCore {
 			switch($type) {
 				case 'string':
 					$columnText .= sprintf('`%s`', $key);
-					$valueText	.= sprintf('`%s`', $parent->mysql_escape_string($this->{$key}));
+					$valueText	.= sprintf('\'%s\'', parent::mysql_escape_string($this->{$key}));
 				break;
 			}
 			if($counter !== count($this->columns)) {
@@ -49,9 +49,8 @@ abstract class dataModels extends sqlCore {
 	}
 
 	public function save() {
-		
 		$query = $this->formulateQuery();
-		return $query;
+		return parent::insert($query);
 	}
 
 	/*********

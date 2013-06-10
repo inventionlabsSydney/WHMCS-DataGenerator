@@ -11,8 +11,8 @@ require_once(dirname(__FILE__).'/../classes/class.datamodel.php');
 
 class tblclients extends dataModels {
 
-	function __construct() {
-		parent::__construct(__CLASS__);
+	function __construct($configuration = false) {
+		parent::__construct(__CLASS__, $configuration);
 	}
 
 	public function tableDefinition() {
@@ -39,5 +39,4 @@ class tblclients extends dataModels {
 		$this->hasColumn('status',		'string');
 	}
 
-	//public function 
  }
