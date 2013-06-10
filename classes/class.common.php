@@ -22,4 +22,8 @@ class common {
 	static function activate() {
 		return array("status" => "success", "description" => "Installed the module successfully!");
 	}
+
+	static function output() {
+		$page = (isset($_GET['page']) == false? "default" : $_GET['page']);
+	}
 }

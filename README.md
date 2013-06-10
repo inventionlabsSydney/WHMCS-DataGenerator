@@ -1,4 +1,5 @@
 # WHMCS-DataGenerator
+By Karl Kloppenborg (Invention Labs Sydney)
 
 ## Description
 When coding WHMCS modules it's common you'll need to use testing information, testing products /accounts / services / orders and invoices.
