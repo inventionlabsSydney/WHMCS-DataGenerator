@@ -10,3 +10,7 @@ require_once(dirname(__FILE__).'/classes/class.common.php');
 function whmcs_dataGen_config() {
 	return whmcsDataGen\common::configuration();
 }
+
+function whmcs_dataGen_activate() {
+	return whmcsDataGen\common::activate();
+}

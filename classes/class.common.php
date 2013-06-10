@@ -18,4 +18,8 @@ class common {
 			"fields" 		=> array()
 			);
 	}
+
+	static function activate() {
+		return array("status" => "success", "description" => "Installed the module successfully!");
+	}
 }
