@@ -38,5 +38,4 @@ class tblclients extends dataModels {
 		$this->hasColumn('groupid',		'string');
 		$this->hasColumn('status',		'string');
 	}
-
  }

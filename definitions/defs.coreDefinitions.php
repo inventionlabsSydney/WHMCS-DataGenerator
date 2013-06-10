@@ -6,7 +6,4 @@
  * @author Karl Kloppenborg
  */
 
-###############
-# Table Definitions
-###############
-define('TABLE_CLIENTS', 'tblclients');
+define('RAM_NEEDED', 2048);
