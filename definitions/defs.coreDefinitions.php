@@ -6,4 +6,4 @@
  * @author Karl Kloppenborg
  */
 
-define('RAM_NEEDED', 2048);
+define('RAM_NEEDED', 1024);

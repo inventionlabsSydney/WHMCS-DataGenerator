@@ -25,5 +25,19 @@ class common {
 
 	static function output() {
 		$page = (isset($_GET['page']) == false? "default" : $_GET['page']);
+
+		switch($page) {
+			default:
+				self::page_default();
+			break;
+		}
+	}
+
+	static function page_default() {
+		$template = new Smarty;
+		$template->caching = false;
+
+		//Render
+		$template->display(dirname(__FILE__).'/../templates/default.tpl');
 	}
 }
